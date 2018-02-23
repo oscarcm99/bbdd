@@ -1,0 +1,1 @@
+INSERT INTO AEROPUERTO VALUES('MAD','Barajas-Adolfo Suarez','Madrid','España'),('LHR','Heathrow','Londres','Inglaterra'),('CDG','Paris-Charles de Gualle','Paris','Francia'),('MEX','Benito Juarez','Ciudad de Mexico','Mexico'),('BCN','El Prat','El Prat de Llobregat','España');

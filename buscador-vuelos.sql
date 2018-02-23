@@ -69,3 +69,4 @@ CREATE TABLE FACTURACION(
 			Fecha DATE
 			);
 source buscador-vuelos-mod.sql;
+source buscador-vuelos-datos.sql;
