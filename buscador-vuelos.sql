@@ -10,11 +10,8 @@ CREATE TABLE AEROPUERTO(
 
 CREATE TABLE TERMINAL(
 			Numero INT,  
-			CodIATA CHAR(3), 
-			Ciudad VARCHAR(30), 
-			PuertaEmbarque VARCHAR(2), 
-			PuertaLlegada VARCHAR(2)
-			);
+			CodIATA_Aeropuerto CHAR(3), 
+			Ciudad_Aeropuerto VARCHAR(30));
 
 CREATE TABLE VUELO(
 			CodVuelo VARCHAR(7), 
@@ -22,8 +19,8 @@ CREATE TABLE VUELO(
 			AeropuertoOrigen VARCHAR(50), 
 			AeropuertoDestino VARCHAR(50), 
 			Estado ENUM('Situado','Cancelado','Retrasado'), 
-			Embarque INT, 
-			Puerta_Llegada INT
+			PuertaEmbarque INT, 
+			PuertaLlegada INT
 		);
 
 CREATE TABLE ASIENTO(
