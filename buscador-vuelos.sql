@@ -62,7 +62,7 @@ CREATE TABLE HORARIO(
 			);
 CREATE TABLE FACTURACION(
 			Mostrador INT, 
-			NumeroTerminal VARCHAR(5), 
+			Numero_Terminal VARCHAR(5), 
 			Ciudad_AEROPUERTO VARCHAR(30), 
                         CodIATA_AEROPUERTO CHAR(3),
 			HoraLimite TIME, 
