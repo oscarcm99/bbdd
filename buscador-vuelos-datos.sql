@@ -1,5 +1,5 @@
 INSERT INTO AEROPUERTO VALUES('MAD','Barajas-Adolfo Suarez','Madrid','España'),('LHR','Heathrow','Londres','Inglaterra'),('CDG','Paris-Charles de Gaulle','Paris','Francia'),('MEX','Benito Juarez','Ciudad de Mexico','Mexico'),('BCN','El Prat','El Prat de Llobregat','España'),('LIS','Humberto Delgado','Lisboa','Portugal'),('EIN','Eindhoven','Eindhoven','Paises Bajos'),('ICN','Incheon','Incheon','Corea del Sur'),('PEK','Pekin-Capital','Pekin','China');
-INSERT INTO TERMINAL VALUES('T4','MAD','Madrid'),('North','LHR','Londres'),('2C','CDG','Paris'),('T3','MEX','Ciudad de Mexico'),('T2B','BCN','El Prat de Llobregat');
+INSERT INTO TERMINAL VALUES('T4','MAD','Madrid'),('North','LHR','Londres'),('2C','CDG','Paris'),('T3','MEX','Ciudad de Mexico'),('T2B','BCN','El Prat de Llobregat'),('T8','LIS','Lisboa'),('T1','EIN','Eindhoven'),('T1','ICN','Incheon'),('T5','PEK','Pekin');
 INSERT INTO COMPAÑIA VALUES('RYR','Ryanair','img/ryanair.png'),('AEA','Air Europa','img/aireuropa.png'),('IBE','Iberia','img/iberia.png'),('VYG','Vueling','img/vueling.png'),('UAE','Fly Emirates','img/fly.png');
 INSERT INTO VUELO VALUES('IB-2367','IBE','Barajas-Adolfo Suarez','Heathrow','Situado','4','1'),('FR-2377','RYR','Paris-Charles de Gualle','Heathrow','Cancelado','3','2'),('UX-2567','AEA','Barajas-Adolfo Suarez','Benito Juarez','Retrasado','5','8'),('EK-2467','UAE','El Prat','Heathrow','Retrasado','1','4'),('VY-3567','VYG','El Prat','Barajas-Adolfo Suarez','Cancelado','3','5');
 INSERT INTO ASIENTO VALUES('13D','IB-2367','Turista'),('2A','FR-2377','Turista'),('1B','UX-2567','Business'),('23E','EK-2467','Business'),('6C','VY-3567','Turista');
@@ -14,3 +14,10 @@ UPDATE AEROPUERTO SET Ciudad = 'Orly' WHERE Ciudad = 'Paris';
 DELETE FROM AEROPUERTO WHERE Pais ='Portugal';
 DELETE FROM AEROPUERTO WHERE Pais ='Paises Bajos';
 DELETE FROM AEROPUERTO WHERE Pais ='China';
+UPDATE TERMINAL SET Numero = 'T3' WHERE Numero = 'T4';
+UPDATE TERMINAL SET Numero = 'South' WHERE Numero = 'North';
+UPDATE TERMINAL SET Numero = 'T1B' WHERE Numero = 'T2B';
+DELETE FROM TERMINAL WHERE Ciudad_Aeropuerto ='Lisboa';
+DELETE FROM TERMINAL WHERE Ciudad_Aeropuerto ='Eindhoven';
+DELETE FROM TERMINAL WHERE Ciudad_Aeropuerto ='Pekin';
+
