@@ -14,7 +14,7 @@ CREATE TABLE TERMINAL(
 			Ciudad_Aeropuerto VARCHAR(30));
 
 CREATE TABLE VUELO(
-			CodVuelo VARCHAR(7), 
+			CodVuelo CHAR(7), 
 			CodCompañia CHAR(3), 
 			AeropuertoOrigen VARCHAR(50), 
 			AeropuertoDestino VARCHAR(50), 
@@ -25,7 +25,7 @@ CREATE TABLE VUELO(
 
 CREATE TABLE ASIENTO(
 			CodAsiento VARCHAR(3),
-			CodVuelo_VUELO VARCHAR(7), 
+			CodVuelo_VUELO CHAR(7), 
 			TipoClase ENUM('Business','Turista')
 			);
 
@@ -38,7 +38,7 @@ CREATE TABLE PASAJERO(
 			);
 
 CREATE TABLE RESERVA(
-			Localizador CHAR(9),
+			Localizador CHAR(6),
 			DNI_PASAJERO CHAR(9),
 			Precio FLOAT NOT NULL,
 			metodoPago ENUM('Tarjeta','Efectivo'),
@@ -46,27 +46,27 @@ CREATE TABLE RESERVA(
 			);
 
 CREATE TABLE RESERVA_VUELO(
-			Localizador_RESERVA CHAR(9), 
-			CodVuelo_VUELO VARCHAR(7),
+			Localizador_RESERVA CHAR(6), 
+			CodVuelo_VUELO CHAR(7),
 			CodAsiento_ASIENTO VARCHAR(3)
 			);
 
 CREATE TABLE COMPAÑIA(
 			CodCompañia CHAR(3), 
 			Nombre VARCHAR(30), 
-			Logo BLOB
+			Logo VARCHAR(30)
 			);
 
 CREATE TABLE HORARIO(
-			CodVuelo_VUELO VARCHAR(7), 
+			CodVuelo_VUELO CHAR(7), 
 			HoraFechaSalida TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 				
 			HoraFechaLlegada TIMESTAMP  DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 			);
 CREATE TABLE FACTURACION(
 			Mostrador INT, 
 			Numero_Terminal VARCHAR(5), 
-			Ciudad_AEROPUERTO VARCHAR(30), 
-                        CodIATA_AEROPUERTO CHAR(3),
+			CodIATA_AEROPUERTO CHAR(3),
+			Ciudad_AEROPUERTO VARCHAR(30),
 			HoraLimite TIME NOT NULL, 
 			Fecha DATE NOT NULL
 			);
