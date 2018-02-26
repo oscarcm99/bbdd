@@ -3,7 +3,7 @@ CREATE DATABASE VOYVOLANDO;
 USE VOYVOLANDO
 CREATE TABLE AEROPUERTO(
 			CodIATA CHAR(3), /*Es CHAR(3) por que los código IATA son obligatoriamente 3 letras y con el char */
-			Nombre VARCHAR(50), 
+			Nombre VARCHAR(50) NOT NULL, 
 			Ciudad VARCHAR(30), 
 			Pais VARCHAR(30)
 			);
