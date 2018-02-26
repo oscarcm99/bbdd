@@ -18,13 +18,14 @@ CREATE TABLE VUELO(
 			CodCompañia CHAR(3), 
 			AeropuertoOrigen VARCHAR(50), 
 			AeropuertoDestino VARCHAR(50), 
-			Estado ENUM('Situado','Cancelado','Retrasado'), 
+			Estado ENUM('Situado','Cancelado','Retrasado') NOT NULL, 
 			PuertaEmbarque INT, 
 			PuertaLlegada INT
 		);
 
 CREATE TABLE ASIENTO(
-			CodAsiento VARCHAR(3), 
+			CodAsiento VARCHAR(3),
+			CodVuelo_VUELO VARCHAR(7), 
 			TipoClase ENUM('Business','Turista')
 			);
 
@@ -33,14 +34,15 @@ CREATE TABLE PASAJERO(
 			Nombre VARCHAR(30), 
 			Apellido1 VARCHAR(30), 
 			Apellido2 VARCHAR(30),
-			EdadPasajero ENUM('Adulto','Niño','Bebe')	
+			EdadPasajero ENUM('Adulto','Niño','Bebe') NOT NULL	
 			);
 
 CREATE TABLE RESERVA(
 			Localizador CHAR(9),
 			DNI_PASAJERO CHAR(9),
-			Precio FLOAT,
-			metodoPago ENUM('Tarjeta','Efectivo') 
+			Precio FLOAT NOT NULL,
+			metodoPago ENUM('Tarjeta','Efectivo'),
+			opcion ENUM('Ida','Ida y vuelta')	 
 			);
 
 CREATE TABLE RESERVA_VUELO(
@@ -65,8 +67,8 @@ CREATE TABLE FACTURACION(
 			Numero_Terminal VARCHAR(5), 
 			Ciudad_AEROPUERTO VARCHAR(30), 
                         CodIATA_AEROPUERTO CHAR(3),
-			HoraLimite TIME, 
-			Fecha DATE
+			HoraLimite TIME NOT NULL, 
+			Fecha DATE NOT NULL
 			);
 source buscador-vuelos-mod.sql;
 source buscador-vuelos-datos.sql;
