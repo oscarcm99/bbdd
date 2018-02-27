@@ -1,0 +1,19 @@
+CREATE USER IF NOT EXISTS 'administrador'@'localhost' IDENTIFIED BY 'administrador123';
+GRANT ALL PRIVILEGES ON VOYVOLANDO.* TO 'administrador'@'localhost';
+CREATE USER IF NOT EXISTS 'anonimo'@'localhost' IDENTIFIED BY 'anonimo123';
+GRANT SELECT ON VOYVOLANDO.AEROPUERTO  TO 'anonimo'@'localhost';
+GRANT SELECT ON VOYVOLANDO.TERMINAL  TO 'anonimo'@'localhost';
+GRANT SELECT ON VOYVOLANDO.VUELO  TO 'anonimo'@'localhost';
+GRANT SELECT ON VOYVOLANDO.COMPAÑIA  TO 'anonimo'@'localhost';
+GRANT SELECT ON VOYVOLANDO.HORARIO  TO 'anonimo'@'localhost';
+CREATE USER IF NOT EXISTS 'cliente'@'localhost' IDENTIFIED BY 'cliente123';
+GRANT INSERT ON VOYVOLANDO.PASAJERO  TO 'cliente'@'localhost';
+GRANT INSERT,SELECT ON VOYVOLANDO.RESERVA  TO 'cliente'@'localhost';
+GRANT SELECT ON VOYVOLANDO.AEROPUERTO  TO 'cliente'@'localhost';
+GRANT SELECT ON VOYVOLANDO.TERMINAL  TO 'cliente'@'localhost';
+GRANT SELECT ON VOYVOLANDO.VUELO  TO 'cliente'@'localhost';
+GRANT SELECT ON VOYVOLANDO.COMPAÑIA  TO 'cliente'@'localhost';
+GRANT SELECT ON VOYVOLANDO.HORARIO  TO 'cliente'@'localhost';
+CREATE USER IF NOT EXISTS 'empleado'@'localhost' IDENTIFIED BY 'empleado123';
+GRANT INSERT,UPDATE,SELECT,DELETE ON VOYVOLANDO.*  TO 'empleado'@'localhost';
+
