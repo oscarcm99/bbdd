@@ -3,28 +3,28 @@ CREATE DATABASE VOYVOLANDO;
 USE VOYVOLANDO
 CREATE TABLE AEROPUERTO(
 			CodIATA CHAR(3), /*Es CHAR(3) por que los código IATA son obligatoriamente 3 letras y con el char */
-			Nombre VARCHAR(50) NOT NULL, 
+			Nombre VARCHAR(50) NOT NULL,/*el aeropuerto se debe de rellenar*/  
 			Ciudad VARCHAR(30), 
 			Pais VARCHAR(30)
 			);
 
 CREATE TABLE TERMINAL(
 			Numero VARCHAR(5),  /*Hay terminales que no estan formadas solamente por un número*/
-			CodIATA_Aeropuerto CHAR(3), 
+			CodIATA_Aeropuerto CHAR(3),/*las claves foraneas se ponen porque son primary key de aeropuerto*/ 
 			Ciudad_Aeropuerto VARCHAR(30));
 
 CREATE TABLE VUELO(
-			CodVuelo CHAR(7), 
-			CodCompañia CHAR(3), 
+			CodVuelo CHAR(7),/*es char porque esta requerido que todos los codigos de vuelo son dos letras - 4numeros*/ 
+			CodCompañia CHAR(3),/* son tres letras en mayuscula como IBE de Iberia*/ 
 			AeropuertoOrigen VARCHAR(50), 
 			AeropuertoDestino VARCHAR(50), 
-			Estado ENUM('Situado','Cancelado','Retrasado') NOT NULL, 
+			Estado ENUM('Situado','Cancelado','Retrasado') NOT NULL,/* necesitamos saber el estado del vuelo por eso es NOT NULL*/ 
 			PuertaEmbarque INT, 
 			PuertaLlegada INT
 		);
 
 CREATE TABLE ASIENTO(
-			CodAsiento VARCHAR(3),
+			CodAsiento VARCHAR(3),/**/
 			CodVuelo_VUELO CHAR(7), 
 			TipoClase ENUM('Business','Turista')
 			);
