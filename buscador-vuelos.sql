@@ -19,56 +19,56 @@ CREATE TABLE VUELO(
 			AeropuertoOrigen VARCHAR(50), 
 			AeropuertoDestino VARCHAR(50), 
 			Estado ENUM('Situado','Cancelado','Retrasado') NOT NULL,/* necesitamos saber el estado del vuelo por eso es NOT NULL*/ 
-			PuertaEmbarque INT, 
+			PuertaEmbarque INT, /*Ambas son de tipo entero porque se identifican con número*/ 
 			PuertaLlegada INT
 		);
 
 CREATE TABLE ASIENTO(
-			CodAsiento VARCHAR(3),/**/
+			CodAsiento VARCHAR(3),/*Suele estar completo de una letra y uno o dos numeros por eso es VARCHAR porque en algunos casos puede ser de 2 caracteres y otras veces 3*/
 			CodVuelo_VUELO CHAR(7), 
-			TipoClase ENUM('Business','Turista')
+			TipoClase ENUM('Business','Turista')/*Clase del asiento */
 			);
 
 CREATE TABLE PASAJERO(
-			DNI CHAR(9), 
+			DNI CHAR(9), /*El DNI tiene que ser obligatoriamente 9 caracteres*/
 			Nombre VARCHAR(30), 
 			Apellido1 VARCHAR(30), 
 			Apellido2 VARCHAR(30),
-			EdadPasajero ENUM('Adulto','Niño','Bebe') NOT NULL	
+			EdadPasajero ENUM('Adulto','Niño','Bebe') NOT NULL/*Se necesita saber*/	
 			);
 
 CREATE TABLE RESERVA(
-			Localizador CHAR(6),
-			DNI_PASAJERO CHAR(9),
-			Precio FLOAT NOT NULL,
-			metodoPago ENUM('Tarjeta','Efectivo'),
-			opcion ENUM('Ida','Ida y vuelta')	 
+			Localizador CHAR(6),/*Es char de 6 caracteres */
+			DNI_PASAJERO CHAR(9),/*a una reserva se le asocia un DNI*/
+			Precio FLOAT NOT NULL,/*Todo vuelo que está planeado tiene un precio y se necesita*/
+			metodoPago ENUM('Tarjeta','Efectivo'),/*Dos metodos tarjeta o efectivo*/
+			opcion ENUM('Ida','Ida y vuelta')/*Opciones de la reserva de vuelo*/
 			);
 
 CREATE TABLE RESERVA_VUELO(
-			Localizador_RESERVA CHAR(6), 
+			Localizador_RESERVA CHAR(6), /*Añadimos el localizdor del billete*/
 			CodVuelo_VUELO CHAR(7),
 			CodAsiento_ASIENTO VARCHAR(3)
 			);
 
 CREATE TABLE COMPAÑIA(
-			CodCompañia CHAR(3), 
+			CodCompañia CHAR(3), /*Las compañias en los aeropuertos*/
 			Nombre VARCHAR(30), 
-			Logo VARCHAR(30)
+			Logo VARCHAR(30)/*ponemos varchar para especificar la ruta del fichero*/
 			);
 
 CREATE TABLE HORARIO(
-			CodVuelo_VUELO CHAR(7), 
-			HoraFechaSalida TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 				
+			CodVuelo_VUELO CHAR(7), /*Añadimos el codigo del vuelo*/
+			HoraFechaSalida TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, /*Ponemos la fecha y hora de salida y llegada para que salga el dia y hora a la vez y si no se inserta un dato se mete la hora de este momento por defecto */				
 			HoraFechaLlegada TIMESTAMP  DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 			);
 CREATE TABLE FACTURACION(
 			Mostrador INT, 
-			Numero_Terminal VARCHAR(5), 
+			Numero_Terminal VARCHAR(5), /*Queremos saber la terminal de que CodIATA y la Ciudad del aeropuerto*/
 			CodIATA_AEROPUERTO CHAR(3),
 			Ciudad_AEROPUERTO VARCHAR(30),
-			HoraLimite TIME NOT NULL, 
-			Fecha DATE NOT NULL
+			HoraLimite TIME NOT NULL, /*La hora se debe saber  y son dos horas antes de la salida del vuelo*/
+			Fecha DATE NOT NULL/*La fecha se debe de saber*/
 			);
-source buscador-vuelos-mod.sql;
-source buscador-vuelos-datos.sql;
+source buscador-vuelos-mod.sql;/*Cargamos las modificaciones*/
+source buscador-vuelos-datos.sql;/*Cargamos la inserción, actualizado y borrado de datos*/

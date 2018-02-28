@@ -1,4 +1,4 @@
-INSERT INTO AEROPUERTO VALUES
+INSERT INTO AEROPUERTO VALUES/*Insertamos los datos del campo AEROPUERTO*/
 		('MAD','Barajas-Adolfo	Suarez','Madrid','España'),								
 		('LHR','Heathrow','Londres','Inglaterra'),
 		('CDG','Paris-Charles de Gaulle','Paris','Francia'),
@@ -8,7 +8,7 @@ INSERT INTO AEROPUERTO VALUES
 		('EIN','Eindhoven','Eindhoven','Paises Bajos'),
 		('ICN','Incheon','Incheon','Corea del Sur'),
 		('PEK','Pekin-Capital','Pekin','China');
-INSERT INTO TERMINAL VALUES
+INSERT INTO TERMINAL VALUES/*Insertamos los datos del campo TERMINAL*/
 		('T4','MAD','Madrid'),
 		('North','LHR','Londres'),
 		('2C','CDG','Paris'),
@@ -18,7 +18,7 @@ INSERT INTO TERMINAL VALUES
 		('T1','EIN','Eindhoven'),
 		('T7','ICN','Incheon'),
 		('T5','PEK','Pekin');
-INSERT INTO COMPAÑIA VALUES
+INSERT INTO COMPAÑIA VALUES /*Insertamos los datos del campo COMPAÑIA*/
 		('RYR','Ryanair','img/ryanair.png'),
 		('AEA','Air Europa','img/aireuropa.png'),
 		('IBE','Iberia','img/iberia.png'),
@@ -28,7 +28,7 @@ INSERT INTO COMPAÑIA VALUES
 		('NAX','Norwegian Air','img/nor.png'),
 		('ABX','ABEX','img/ABEX.png'),
 		('HTH','Alboran','img/alboran.png');
-INSERT INTO VUELO VALUES
+INSERT INTO VUELO VALUES /*Insertamos los datos del campo VUELO*/
 		('IB-2367','IBE','Barajas-Adolfo Suarez','Heathrow','Situado','4','1'),
 		('FR-2377','RYR','Paris-Charles de Gualle','Heathrow','Cancelado','3','2'),      	
 		('UX-2567','AEA','Barajas-Adolfo Suarez','Benito Juarez','Retrasado','5','8'),
@@ -38,7 +38,7 @@ INSERT INTO VUELO VALUES
 		('NA-9787','NAX','El Prat','Humberto Delgado','Cancelado','10','2'),
 		('AB-1390','ABX','Pekin-Capital','Barajas-Adolfo Suarez','Retrasado','3','7'),
 		('HT-3200','HTH','Benito Juarez','Incheon','Cancelado','1','2');
-INSERT INTO ASIENTO VALUES
+INSERT INTO ASIENTO VALUES /*Insertamos los datos del campo ASIENTO*/
 		('13D','IB-2367','Turista'),
 		('2A','FR-2377','Turista'),
 		('1B','UX-2567','Business'),
@@ -48,7 +48,7 @@ INSERT INTO ASIENTO VALUES
 		('35F','NA-9787','Turista'),
 		('2B','AB-1390','Business'),
 		('16F','HT-3200','Turista');
-INSERT INTO PASAJERO VALUES
+INSERT INTO PASAJERO VALUES /*Insertamos los datos del campo PASAJERO*/
 		('07489563Z','Alfredo','Gomez','De la Serna','Adulto'),	
 		('50489410V','Adrian','Lopez','Rodriguez','Niño'),	
 		('45689721S','Jonathan','Muñoz','Garcia','Bebe'),	
@@ -58,7 +58,7 @@ INSERT INTO PASAJERO VALUES
 		('08958745Q','Diego','Hernandez','Calderon','Niño'),	
 		('04256482L','David','Prado','Lancharro','Bebe'),	
 		('34567801V','Juan','Lopez','Alcahuete','Adulto');		
-INSERT INTO RESERVA VALUES
+INSERT INTO RESERVA VALUES /*Insertamos los datos del campo RESERVA*/
 		('DG3421','07489563Z',234.45,'Tarjeta','Ida y vuelta'),
 		('FS4567','50489410V', 123.09,'Efectivo','Ida'),
 		('AB0021','45689721S',89.01,'Efectivo','Ida y vuelta'),	
@@ -68,7 +68,7 @@ INSERT INTO RESERVA VALUES
 		('XZ0098','08958745Q',105.89,'Efectivo','Ida'),
 		('AA3789','04256482L',56.03,'Efectivo','Ida y vuelta'),
 		('WC2121','34567801V',589.90,'Tarjeta','Ida y vuelta');
-INSERT INTO RESERVA_VUELO VALUES
+INSERT INTO RESERVA_VUELO VALUES /*Insertamos los datos del campo RESERVA_VUELO*/
 		('DG3421','IB-2367','13D'),
 		('FS4567','FR-2377','2A'),
 		('AB0021','UX-2567','1B'),
@@ -78,7 +78,7 @@ INSERT INTO RESERVA_VUELO VALUES
 		('XZ0098','NA-9787','35F'),
 		('AA3789','AB-1390','2B'),
 		('WC2121','HT-3200','16F');
-INSERT INTO HORARIO VALUES
+INSERT INTO HORARIO VALUES /*Insertamos los datos del campo HORARIO*/
 		('IB-2367','2018-02-28 10:30:00','2018-02-28 13:30:00'),
 		('FR-2377','2018-02-28 17:30:00','2018-02-28 19:00:00'),
 		('UX-2567','2018-02-28 13:50:00','2018-02-28 17:20:00'),
@@ -88,7 +88,7 @@ INSERT INTO HORARIO VALUES
 		('NA-9787','2018-02-28 20:40:00','2018-02-28 02:15:00'),
 		('AB-1390','2018-02-28 19:25:00','2018-02-28 22:50:00'),
 		('HT-3200','2018-02-28 20:00:00','2018-03-01 01:40:00');
-INSERT INTO FACTURACION VALUES
+INSERT INTO FACTURACION VALUES /*Insertamos los datos del campo FACTURACION*/
 		(15,'T4','MAD','Madrid','08:30:00','2018-02-28','IB-2367'),	
 		(34,'2C','CDG','Paris','15:30:00','2018-02-28','FR-2377'),	
 		(23,'T4','MAD','Madrid','11:50:00','2018-02-28','UX-2567'),
@@ -98,55 +98,64 @@ INSERT INTO FACTURACION VALUES
 		(22,'T2B','BCN','El Prat de Llobregat','18:40:00','2018-02-28','NA-9787'),
 		(67,'T5','PEK','Pekin','17:25:00','2018-02-28','AB-1390'),
 		(40,'T3','MEX','Ciudad de Mexico','18:00:00','2018-02-28','HT-3200');
-		
+/*Modificaciones para actualizar y borrar datos de la tabla */		
 UPDATE AEROPUERTO SET CodIATA = 'ORY' WHERE CodIATA = 'CDG';
 UPDATE AEROPUERTO SET Nombre = 'Orly' WHERE Nombre = 'Paris-Charles de Gaulle';
 UPDATE AEROPUERTO SET Ciudad = 'Orly' WHERE Ciudad = 'Paris';
 DELETE FROM AEROPUERTO WHERE Pais ='Portugal';
 DELETE FROM AEROPUERTO WHERE Pais ='Paises Bajos';
 DELETE FROM AEROPUERTO WHERE Pais ='China';
+/*Modificaciones para actualizar y borrar datos de la tabla */
 UPDATE TERMINAL SET Numero = 'T3' WHERE Numero = 'T4';
 UPDATE TERMINAL SET Numero = 'South' WHERE Numero = 'North';
 UPDATE TERMINAL SET Numero = 'T1B' WHERE Numero = 'T2B';
 DELETE FROM TERMINAL WHERE Ciudad_Aeropuerto ='Lisboa';
 DELETE FROM TERMINAL WHERE Ciudad_Aeropuerto ='Eindhoven';
 DELETE FROM TERMINAL WHERE Ciudad_Aeropuerto ='Pekin';
+/*Modificaciones para actualizar y borrar datos de la tabla */
 UPDATE COMPAÑIA SET CodCompañia = 'AAL' WHERE CodCompañia = 'RYR';
 UPDATE COMPAÑIA SET Nombre = 'American Airlines' WHERE Nombre = 'Ryanair';
 UPDATE COMPAÑIA SET Logo = 'img/aal.png' WHERE Logo = 'img/ryanair.png';
 DELETE FROM COMPAÑIA WHERE CodCompañia = 'NAX';
 DELETE FROM COMPAÑIA WHERE CodCompañia = 'ABX';
 DELETE FROM COMPAÑIA WHERE CodCompañia = 'HTH';
+/*Modificaciones para actualizar y borrar datos de la tabla */
 UPDATE VUELO SET CodVuelo = 'IB-1023' WHERE CodVuelo = 'IB-2367';
 UPDATE VUELO SET CodVuelo = 'FR-2311' WHERE CodVuelo = 'FR-2377';
 UPDATE VUELO SET CodVuelo = 'UX-2009' WHERE CodVuelo = 'UX-2567';
 DELETE FROM VUELO WHERE CodCompañia = 'NAX';
 DELETE FROM VUELO WHERE CodCompañia = 'ABX';
 DELETE FROM VUELO WHERE CodCompañia = 'HTH';
+/*Modificaciones para actualizar y borrar datos de la tabla */
 UPDATE ASIENTO SET CodAsiento = '20A' WHERE CodAsiento = '13D';
 UPDATE ASIENTO SET CodAsiento = '2D' WHERE CodAsiento = '2A';
 UPDATE ASIENTO SET CodAsiento = '1C' WHERE CodAsiento = '1B';
 DELETE FROM ASIENTO WHERE CodVuelo_VUELO = 'NA-9787';
 DELETE FROM ASIENTO WHERE CodVuelo_VUELO = 'AB-1390';
 DELETE FROM ASIENTO WHERE CodVuelo_VUELO = 'HT-3200';
+/*Modificaciones para actualizar y borrar datos de la tabla */
 UPDATE PASAJERO SET DNI = '58942512C' WHERE DNI = '50489410V';
 UPDATE PASAJERO SET DNI = '01254885R' WHERE DNI = '15648972F';
 UPDATE PASAJERO SET Nombre = 'Jose Carlos' WHERE Nombre = 'Jonathan';
 DELETE FROM PASAJERO WHERE DNI = '08958745Q';
 DELETE FROM PASAJERO WHERE DNI = '04256482L';
 DELETE FROM PASAJERO WHERE DNI = '34567801V';
+/*Modificaciones para actualizar y borrar datos de la tabla */
 UPDATE RESERVA SET Precio = 269.80 WHERE Precio = 234.45;
 UPDATE RESERVA SET Precio = 120.59 WHERE Precio = 123.09;
 UPDATE RESERVA SET Precio = 80.00 WHERE Precio = 89.01;
 DELETE FROM RESERVA WHERE Localizador = 'XZ0098';
 DELETE FROM RESERVA WHERE Localizador = 'AA3789';
 DELETE FROM RESERVA WHERE Localizador = 'WC2121';
+/*En la tabla RESERVA_VUELO no se puede actualizar ni borrar datos ya que como esta compuesto de FK al borrarse y actualizarse datos de los campos padre se borran y actualizan en esta gracias a las referencias puestas en las FK */
+/*Modificaciones para actualizar y borrar datos de la tabla */
 UPDATE HORARIO SET HoraFechaSalida = '2018-03-01 10:30:00' WHERE HoraFechaSalida = '2018-02-28 10:30:00';
 UPDATE HORARIO SET HoraFechaLlegada = '2018-03-01 13:30:00' WHERE HoraFechaLlegada = '2018-02-28 13:30:00';
 UPDATE HORARIO SET HoraFechaSalida = '2018-02-28 17:00:00' WHERE HoraFechaSalida = '2018-02-28 17:30:00';
 DELETE FROM HORARIO WHERE CodVuelo_VUELO = 'NA-9787';
 DELETE FROM HORARIO WHERE CodVuelo_VUELO = 'AB-1390';
 DELETE FROM HORARIO WHERE CodVuelo_VUELO = 'HT-3200';
+/*Modificaciones para actualizar y borrar datos de la tabla FACTURACION*/
 UPDATE FACTURACION SET Fecha = '2018-03-01' WHERE Fecha = '2018-02-28';
 UPDATE FACTURACION SET HoraLimite = '15:00:00' WHERE HoraLimite = '15:30:00';
 UPDATE FACTURACION SET Mostrador = 32 WHERE Mostrador = 23;
